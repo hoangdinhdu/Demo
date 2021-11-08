@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Demo.Models;
+namespace Demo.Data{
 
     public class DemoDBContext : DbContext
     {
@@ -20,3 +21,4 @@ using Demo.Models;
 
         public DbSet<Demo.Models.Product> Products { get; set; }
     }
+}
