@@ -28,7 +28,7 @@ namespace Demo
         {
             services.AddControllersWithViews();
              services.AddDbContext<DemoDBContext>(options =>
-        {
+          {
             var connectionString = Configuration.GetConnectionString("DemoDBContext");
 
             if (Environment.IsDevelopment())
@@ -39,7 +39,7 @@ namespace Demo
             {
                 options.UseSqlServer(connectionString);
             }
-        });
+          });
 
             //services.AddDbContext<DemoDBContext>(options =>
                    // options.UseSqlite(Configuration.GetConnectionString("DemoDBContext")));

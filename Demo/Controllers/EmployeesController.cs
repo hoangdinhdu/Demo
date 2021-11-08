@@ -21,7 +21,7 @@ namespace Demo.Controllers
         // GET: Employees
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Employee.ToListAsync());
+            return View(await _context.Employees.ToListAsync());
         }
 
         // GET: Employees/Details/5
@@ -32,7 +32,7 @@ namespace Demo.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employee
+            var employee = await _context.Employees
                 .FirstOrDefaultAsync(m => m.EmployeeID == id);
             if (employee == null)
             {
@@ -72,7 +72,7 @@ namespace Demo.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employee.FindAsync(id);
+            var employee = await _context.Employees.FindAsync(id);
             if (employee == null)
             {
                 return NotFound();
@@ -123,7 +123,7 @@ namespace Demo.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employee
+            var employee = await _context.Employees
                 .FirstOrDefaultAsync(m => m.EmployeeID == id);
             if (employee == null)
             {
@@ -138,15 +138,15 @@ namespace Demo.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var employee = await _context.Employee.FindAsync(id);
-            _context.Employee.Remove(employee);
+            var employee = await _context.Employees.FindAsync(id);
+            _context.Employees.Remove(employee);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool EmployeeExists(string id)
         {
-            return _context.Employee.Any(e => e.EmployeeID == id);
+            return _context.Employees.Any(e => e.EmployeeID == id);
         }
     }
 }

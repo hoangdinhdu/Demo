@@ -15,4 +15,4 @@ namespace Demo.Models
         
     }
 }
-//dotnet-aspnet-codegenerator controller -name PersonsController -m Person -dc DemoDBContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
+//dotnet-aspnet-codegenerator controller -name ProductsController -m Product -dc DemoDBContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries -sqlite
